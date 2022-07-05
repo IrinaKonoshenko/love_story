@@ -1,32 +1,93 @@
 .blocks {
   display: flex;
   flex-wrap: wrap;
-  &__foto {
-    margin: 30px 15px;
-  }
-  &__block-one {
-    width: 100%;
-    flex-grow: 1;
+  &__item {
+    padding: 30px;
     background-color: #e5e4e2;
     display: flex;
     justify-content: space-between;
     border: 1px solid #000;
+    &:nth-child(even) {
+      background-color: #b7ceec;
+    }
   }
-  &__block-two {
-    width: auto;
-    flex-grow: 1;
-    background-color: #b7ceec;
+  &__image {
+    width: 500px;
+    height: 750px;
+    flex-shrink: 0;
     display: flex;
-    justify-content: space-between;
-    border: 1px solid #000;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    img {
+      height: 100%;
+      width: auto;
+      max-width: none;
+    }
   }
-  &__block-three {
-    width: auto;
-    flex-grow: 1;
-    background-color: #e5e4e2;
+  &__image:hover &__hovered {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &__hovered {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0,.4);
     display: flex;
-    justify-content: space-between;
-    border: 1px solid #000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity ease-in-out .3s, transform ease-in-out .3s;
+  }
+  &__button {
+    background-color: transparent;
+    border: 4px solid #fff;
+    padding: 10px 25px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: rgba(255,255,255,.1);
+    cursor: pointer;
+    transition: background-color ease-in-out .3s, letter-spacing ease-in-out .3s, color ease-in-out .3s;
+    position: relative;
+    &:after {
+      position: absolute;
+      bottom: 100%;
+      width: 80%;
+      border-left: 4px solid #fff;
+      border-right: 4px solid #fff;
+      left: 10%;
+      content: '';
+      height: 0px;
+      transition: height ease-in-out .3s;
+    }
+    &:before {
+      right: 10%;
+      position: absolute;
+      top: 100%;
+      width: 80%;
+      border-left: 4px solid #fff;
+      border-right: 4px solid #fff;
+      content: '';
+      height: 0px;
+      transition: height ease-in-out .3s;
+    }
+    &:hover {
+      background-color: rgb(255, 255, 255);
+      color: #212121;
+      letter-spacing: 6px;
+      &:after,
+      &:before {
+        height: 750px;
+      }
+    }
   }
   &__text {
     display: flex;
@@ -39,5 +100,7 @@
     color: var(--base-color);
     text-transform: uppercase;
     padding: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 }
