@@ -28,12 +28,6 @@
     justify-content: space-between;
     border: 1px solid #000;
   }
-  &__content{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-  }
   &__text {
     display: flex;
     align-items: center;
@@ -47,4 +41,3 @@
     padding: 20px;
   }
 }
- 

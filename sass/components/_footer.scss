@@ -1,0 +1,16 @@
+.footer{
+    width: auto;
+    flex-grow: 1;
+    background-color: #b7ceec;
+    border: 1px solid #000;
+    padding: 20px;
+    &__text{
+        text-align: center;
+        letter-spacing: 0.09em;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 2;
+        color: var(--base-color);
+        text-transform: uppercase;
+    }
+}
